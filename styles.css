@@ -1,0 +1,147 @@
+:root {
+    --page-background: rgb(255, 255, 255);
+    --page-text: rgb(0, 0, 0);
+    --nav-background: rgb(0, 0, 0);
+    --nav-text: rgb(255, 255, 255);
+    --ham-clr: rgb(0, 0, 0);
+}
+
+.dark {
+    --page-background: rgb(0, 0, 0);
+    --page-text: rgb(255, 255, 255);
+    --nav-background: rgb(255, 255, 255);
+    --nav-text: rgb(0, 0, 0);
+    --ham-clr: rgb(255, 255, 255);
+}
+
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: Dosis, sans-serif;
+}
+
+body {
+    background-color: var(--nav-background);
+    transition: all 0.5s;
+}
+
+.container {
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    background-color: transparent;
+}
+
+.navbar {
+    margin-top: 30px;
+}
+
+.nav-item {
+    width: max-content;
+    list-style: none;
+    padding: 20px;
+    margin: 3px;
+    position: relative;
+    transition: all 0.5s;
+}
+
+.nav-item:hover .nav-link{
+    letter-spacing: 3px;
+    color: red;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--nav-text);
+    transition: all 0.5s;
+}
+
+.page {
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: var(--page-background);
+    color: var(--page-text);
+    transition: transform 0.5s;
+    position: relative;
+}
+
+.change {
+    transform: translate(200px, 100px);
+    transition: transform 0.5s;
+}
+
+header {
+    padding: 1%;
+    display: flex;
+    align-items: center;
+}
+
+header p {
+    transform: translatey(-3px);
+    margin-left: auto;
+    padding-right: 10px;
+}
+
+article {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+article p {
+    font-size: 1.3rem;
+}
+
+article h1 {
+    font-size: 2rem;
+}
+
+article img  {
+    padding: 10px;
+    float: right;
+}
+
+article img:nth-of-type(2) {
+    float: left;
+    padding: 15px;
+}
+
+.hamburger-menu {
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--ham-clr);
+    transition: all 0.5s;
+}
+
+.btncls .line1{
+    transform: rotateZ(-45deg) translate(-7px, 5px); 
+}
+
+.btncls .line2{
+    opacity: 0;
+}
+
+.btncls .line3{
+    transform: rotateZ(45deg) translate(-7px, -5px);
+}
+
+.mode svg {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
